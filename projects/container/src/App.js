@@ -8,7 +8,7 @@ import {
 } from '@material-ui/core/styles';
 
 const generateClassname = createGenerateClassName({
-  productionPrefix: 'co',
+  productionPrefix: 'container',
 });
 
 const App = () => {
