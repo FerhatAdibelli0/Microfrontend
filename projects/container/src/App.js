@@ -12,8 +12,10 @@ const App = () => {
   return (
     <BrowserRouter>
       <StylesProvider generateClassName={generateClassname}>
-        <Header />
-        <MarketingApp />
+        <div>
+          <Header />
+          <MarketingApp />
+        </div>
       </StylesProvider>
     </BrowserRouter>
   );
