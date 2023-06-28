@@ -1,6 +1,6 @@
 import Landing from './components/Landing';
 import Pricing from './components/Pricing';
-import { Route, Switch, BrowserRouter } from 'react-router-dom';
+import { Route, Switch, Router } from 'react-router-dom';
 import React from 'react';
 import {
   StylesProvider,
@@ -11,17 +11,17 @@ const generateClassname = createGenerateClassName({
   productionPrefix: 'market',
 });
 
-const App = () => {
+const App = ({ history }) => {
   return (
     <div>
-      <BrowserRouter>
+      <Router history={history}>
         <StylesProvider generateClassname={generateClassname}>
           <Switch>
             <Route exact path='/pricing' component={Pricing} />
             <Route path='/' component={Landing} />
           </Switch>
         </StylesProvider>
-      </BrowserRouter>
+      </Router>
     </div>
   );
 };
