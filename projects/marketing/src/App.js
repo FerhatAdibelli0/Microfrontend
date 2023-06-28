@@ -10,14 +10,14 @@ const generateClassname = createGenerateClassName({
 
 const App = () => {
   return (
-    <StylesProvider generateClassname={generateClassname}>
-      <BrowserRouter>
+    <BrowserRouter>
+      <StylesProvider generateClassname={generateClassname}>
         <Switch>
           <Route exact path='/pricing' component={Pricing} />
           <Route path='/' component={Landing} />
         </Switch>
-      </BrowserRouter>
-    </StylesProvider>
+      </StylesProvider>
+    </BrowserRouter>
   );
 };
 
