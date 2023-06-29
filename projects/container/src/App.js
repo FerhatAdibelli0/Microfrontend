@@ -15,7 +15,7 @@ const lazyMarketingApp = lazy(() => import('./components/MarketingApp'));
 const lazyAuthApp = lazy(() => import('./components/AuthApp'));
 
 const App = () => {
-  console.log('app');
+  console.log('app....');
   return (
     <BrowserRouter>
       <StylesProvider generateClassName={generateClassname}>
