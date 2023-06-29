@@ -12,6 +12,7 @@ const generateClassname = createGenerateClassName({
 });
 
 const App = ({ history }) => {
+  console.log('auth');
   return (
     <div>
       <Router history={history}>
