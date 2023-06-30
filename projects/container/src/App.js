@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from 'react';
+import React, { lazy, Suspense, useState } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Header from './components/Header';
 import {
@@ -11,20 +11,25 @@ const generateClassname = createGenerateClassName({
   productionPrefix: 'container',
 });
 
-const lazyMarketingApp = lazy(() => import('./components/MarketingApp'));
-const lazyAuthApp = lazy(() => import('./components/AuthApp'));
+const LazyMarketingApp = lazy(() => import('./components/MarketingApp'));
+const LazyAuthApp = lazy(() => import('./components/AuthApp'));
 
 const App = () => {
-  console.log('app....');
+  const [isSignedIn, setIsSignedIn] = useState(false);
   return (
     <BrowserRouter>
       <StylesProvider generateClassName={generateClassname}>
         <div>
-          <Header />
+          <Header
+            isSignedIn={isSignedIn}
+            onSignOut={() => setIsSignedIn(false)}
+          />
           <Suspense fallback={<Progress />}>
             <Switch>
-              <Route path='/auth' component={lazyAuthApp} />
-              <Route path='/' component={lazyMarketingApp} />
+              <Route path='/auth'>
+                <LazyAuthApp onSignIn={() => setIsSignedIn(true)} />
+              </Route>
+              <Route path='/' component={LazyMarketingApp} />
             </Switch>
           </Suspense>
         </div>

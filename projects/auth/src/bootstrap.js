@@ -3,7 +3,10 @@ import React from 'react';
 import App from './App';
 import { createMemoryHistory, createBrowserHistory } from 'history';
 
-const mount = (element, { onNavigate, defaultRouter, initialPath }) => {
+const mount = (
+  element,
+  { onSignIn, onNavigate, defaultRouter, initialPath }
+) => {
   const history =
     defaultRouter ||
     createMemoryHistory({
@@ -21,7 +24,7 @@ const mount = (element, { onNavigate, defaultRouter, initialPath }) => {
     history.listen(onNavigate);
   }
 
-  ReactDOM.render(<App history={history} />, element);
+  ReactDOM.render(<App history={history} onSignIn={onSignIn} />, element);
 
   return { onParentNavigation };
 };
