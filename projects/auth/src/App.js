@@ -7,16 +7,16 @@ import {
 import Signin from '../components/Signin';
 import Signup from '../components/Signup';
 
-// const generateClassname = createGenerateClassName({
-//   productionPrefix: 'auth',
-// });
+const generateClassname = createGenerateClassName({
+  productionPrefix: 'auth',
+});
 
 const App = ({ history, onSignIn }) => {
   console.log('author in auth : Ferhat adibelli...');
   return (
     <div>
       <Router history={history}>
-        <StylesProvider>
+        <StylesProvider generateClassname={generateClassname}>
           <Switch>
             <Route path='/auth/signin'>
               <Signin onSignIn={onSignIn} />
