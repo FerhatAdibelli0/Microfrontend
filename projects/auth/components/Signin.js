@@ -56,9 +56,9 @@ export default function SignIn({ onSignIn }) {
   return (
     <Container component='main' maxWidth='xs'>
       <div className={classes.paper}>
-        <Avatar className={classes.avatar}>
+        {/* <Avatar className={classes.avatar}>
           <LockOutlinedIcon />
-        </Avatar>
+        </Avatar> */}
         <Typography component='h1' variant='h5'>
           Sign in
         </Typography>
@@ -101,7 +101,7 @@ export default function SignIn({ onSignIn }) {
             className={classes.submit}
             onClick={onSignIn}
           >
-            Sign IN
+            Sign In
           </Button>
           <Grid container>
             <Grid item>
