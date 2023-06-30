@@ -12,6 +12,7 @@ const generateClassname = createGenerateClassName({
 });
 
 const App = ({ history }) => {
+  console.log('author in marketing : Ferhat adibelli...');
   return (
     <div>
       <Router history={history}>

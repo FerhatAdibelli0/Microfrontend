@@ -16,6 +16,8 @@ const LazyAuthApp = lazy(() => import('./components/AuthApp'));
 
 const App = () => {
   const [isSignedIn, setIsSignedIn] = useState(false);
+  console.log('author in container : Ferhat adibelli...');
+
   return (
     <BrowserRouter>
       <StylesProvider generateClassName={generateClassname}>
