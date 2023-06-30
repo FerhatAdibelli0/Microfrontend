@@ -12,6 +12,7 @@ const generateClassname = createGenerateClassName({
 });
 
 const App = ({ history, onSignIn }) => {
+  console.log('author : ferhat adibelli');
   return (
     <div>
       <Router history={history}>
